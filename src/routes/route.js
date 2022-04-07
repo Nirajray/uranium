@@ -32,7 +32,7 @@ router.get('/hello', function (req, res){
     let arr3 = [9,9,5,3,7,8]
     let arr4 = [10,10,23,45,55]
     let arr5 = [15,15,16,17,18]
-    console.log(_.union(arr1,arr2,arr3,arr4,arr5))
+    
     console.log("key value pairs are")
     let pairs = [['ram age', 15], ['harry', 20], ['kishan', 37], ['prakash', 18]]
   
@@ -41,8 +41,8 @@ let obj = _.fromPairs(pairs);
 console.log(obj)
 
 
-    res.send('my first ever api!2')
+    res.send(_.union(arr1,arr2,arr3,arr4,arr5))
 })
 
 module.exports = router;
-// adding this comment for no reason
+// adding this comment for no reasons
