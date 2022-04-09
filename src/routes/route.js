@@ -1,6 +1,58 @@
 const express = require('express');
 
 const router = express.Router();
+// Problem no 1: write a post API ====================================================================================
+let players = [
+    {
+        "name": "manish",
+        "dob": "1/1/1995",
+        "gender": "male",
+        "city": "jalandhar",
+        "sports": [
+            "swimming"
+        ]
+    },
+    {
+        "name": "gopal",
+        "dob": "1/09/1995",
+        "gender": "male",
+        "city": "delhi",
+        "sports": [
+            "soccer"
+        ]
+    },
+
+    {
+        "name": "lokesh",
+        "dob": "1/1/1990",
+        "gender": "male",
+        "city": "mumbai",
+        "sports": [
+            "soccer"
+        ],
+    },
+
+    
+];
+
+
+router.post('/players', function (req, res) {
+    let bit=  req.body;
+    for(let i = 0; i<players.length; i++){
+    if(players[i].name==bit.name){
+ res.send("already exist")
+    }
+}
+ 
+      players.push(bit);
+  
+
+
+res.send(  { data: players , status: true }  )
+});
+
+
+
 
 router.get('/test-me', function (req, res) {
     // let a = { msg: "My first ever API response in JSON !!"} 
