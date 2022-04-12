@@ -8,7 +8,11 @@ router.get("/test-me", function (req, res) {
 })
 
 router.post("/createUser", UserController.createUser  )
+router.post("/createBook", UserController.createBook  )
+
 
 router.get("/getUsersData", UserController.getUsersData)
+router.get("/getBooksData", UserController.getBooksData)
+
 
 module.exports = router;
