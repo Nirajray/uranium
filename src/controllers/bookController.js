@@ -11,7 +11,7 @@ const bookList= async function (req, res) {
     res.send({msg: allBooks})
 }
 const getRandomBooks  = async function (req, res) {
-    let randomBooks = await BookModel.find({stockAvailable: true, totalPages:{$gt:500}})
+    let randomBooks = await BookModel.find( { $or: [ {strockAvailable: true}, {totalPages: {$gt: 500 } } ] })
     res.send({msg: randomBooks})
 }
 const getBooksInYear = async function (req, res) {
