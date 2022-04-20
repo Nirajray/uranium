@@ -26,7 +26,7 @@ const getDevelopers= async function(req, res){
 
      let savedData2 = await batchModel.find({batchName:save1}).select({_id:1})
      console.log(savedData2)
-     let data1= await developerModel.find({batches:savedData2,percentage:{$gte:save}}).populate("batches")
+     let data1= await developerModel.find({batches:savedData2, percentage:{$gte:save}})
    res.send({data:data1})
 }
 
